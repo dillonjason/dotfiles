@@ -17,6 +17,10 @@ export ZSH="$HOME/.oh-my-zsh"
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
+# Plugin env vars.  Must be set before loading plugins.
+NVM_LAZY=1
+NVM_AUTOLOAD=1
+
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
@@ -83,6 +87,7 @@ plugins=(
 	colored-man-pages
 	zsh-syntax-highlighting
 	zsh-autosuggestions
+	nvm
 )
 
 source $ZSH/oh-my-zsh.sh
