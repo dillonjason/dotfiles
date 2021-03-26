@@ -19,7 +19,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Plugin env vars.  Must be set before loading plugins.
 NVM_LAZY=1
-NVM_AUTOLOAD=1
+# NVM_AUTOLOAD=1
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
