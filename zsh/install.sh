@@ -1,5 +1,7 @@
 #!/bin/bash
 
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+
 # Install ohmyzsh if needed
 if ! command -v zsh
 then
@@ -18,5 +20,5 @@ git clone https://github.com/zsh-users/zsh-autosuggestions.git ${ZSH_CUSTOM:-$HO
 
 # Update dots
 echo "Updating zsh dots"
-\cp .p10k.zsh $HOME
-\cp .zshrc $HOME
+\ln -s $SCRIPT_DIR/.p10k.zsh $HOME/.p10k.zsh
+\ln -s $SCRIPT_DIR/.zshrc $HOME/.zshrc
