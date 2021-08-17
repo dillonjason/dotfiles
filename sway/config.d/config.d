@@ -1,1 +1,0 @@
-/home/dillon/Packages/dotfiles/sway/config.d
