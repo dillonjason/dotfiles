@@ -19,15 +19,9 @@ set $term alacritty
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
 set $menu dmenu_path | dmenu | xargs swaymsg exec --
-# Laptop screen identifier
-set $laptop eDP-1
 
 ### Output configuration
 #
-# Disable laptop display when closed
-# https://github.com/swaywm/sway/wiki#clamshell-mode
-bindswitch --reload --locked lid:on output $laptop disable
-bindswitch --reload --locked lid:off output $laptop enable
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 #
@@ -86,6 +80,9 @@ output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 
     # Reload the configuration file
     bindsym $mod+Shift+c reload
+
+    # Lock screen
+    bindsym $mod+Pause exec swaylock -f -c 000000
 
     # Exit sway (logs you out of your Wayland session)
     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
@@ -220,10 +217,5 @@ bar {
     }
 }
 
-### Scripts
-#
-# Always:
-#
-exec_always ./scripts/clamshell.sh
-
 include /etc/sway/config.d/*
+include ./config.d/*

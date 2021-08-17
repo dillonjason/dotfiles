@@ -1,0 +1,10 @@
+# Laptop identifier from `swaymsg -t get_outputs`
+set $laptop eDP-1
+
+# Toggle laptop display based on lid open or closed
+# https://github.com/swaywm/sway/wiki#clamshell-mode
+bindswitch --reload --locked lid:on output $laptop disable
+bindswitch --reload --locked lid:off output $laptop enable
+
+# Script to prevent display reset
+exec_always ../scripts/clamshell.sh
